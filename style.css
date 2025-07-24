@@ -331,6 +331,10 @@ body.dark-theme {
     padding-right: 10px;
 }
 
+#new-file-btn {
+    cursor: pointer;
+}
+
 /* End Sidebar Styles */
 
 
