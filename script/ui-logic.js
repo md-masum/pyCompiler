@@ -302,9 +302,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     initializeTraining(editor, files, activeFileId, saveFiles, renderFileList, loadActiveFile, setActiveFile, createNewFile, saveActiveFileContent);
 
-    writeToTerminal('Loading Pyodide\n');
+    writeToTerminal('Loading python compiler\n');
     await initializeMainThreadPyodide();
     initializeWorkerPyodide();
-    writeToTerminal('Pyodide loaded. Ready to run Python code.\n');
+    writeToTerminal('Compiler loaded. Ready to run Python code.\n');
     console.log('ui-logic.js: Initial load complete');
 });

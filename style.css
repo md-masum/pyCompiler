@@ -255,7 +255,7 @@ body.dark-theme {
     }
 
     #file-list > .nav-item {
-    padding-right: 20px !important;
+    padding-right: 10px !important;
 }
 
     .sidebar .sidebar-brand .sidebar-brand-text {
@@ -264,6 +264,15 @@ body.dark-theme {
     .sidebar .nav-item .nav-link span {
         display: inline;
     }
+}
+
+.sidebar .nav-item .nav-link {
+    width: 100% !important;
+    text-align: left;
+    padding: 0.5rem !important;
+}
+.sidebar .nav-item .nav-link span {
+    font-size: .65rem;
 }
 
 /* Z-Index Management */
@@ -328,14 +337,37 @@ body.dark-theme {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 10px;
+    /* padding-right: 10px; */
 }
 
-#new-file-btn {
+#new-file-btn, #report-issue {
     cursor: pointer;
 }
 
 /* End Sidebar Styles */
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2c2f33;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #6a6f74
+}
 
 
 /* Dark theme styles */
@@ -434,11 +466,6 @@ body.dark-theme {
 
 .dark-theme #file-list .nav-item.active .nav-link {
     color: #fff;
-}
-
-.dark-theme .dropdown-menu-right {
-    right: 0;
-    left: auto;
 }
 
 .dark-theme .shadow {

@@ -64,9 +64,10 @@
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item">
-                <a class="nav-link">
+                <a class="nav-link" id="report-issue">
                     <i class="fas fa-bug fa-fw fa-lg"></i>
-                    <span class="text-end">Report Issue</span></a>
+                    <span class="text-end">Report Issue</span>
+                </a>
             </li>
             
             <hr class="sidebar-divider">
@@ -234,6 +235,7 @@
     <script src="script/pyodide-logic.js" type="module" defer></script>
     <script src="script/training.js" type="module" defer></script>
     <script src="script/ui-logic.js" type="module" defer></script>
+    <script src="script/report-issue.js" type="module" defer></script>
 
     <!-- Modal for Example Code -->
     <div class="modal fade" id="example-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -251,6 +253,38 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="load-in-current-file-btn">Load in Current File</button>
                     <button type="button" class="btn btn-primary" id="create-new-file-from-example-btn">Create New File</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for report issue -->
+    <div class="modal fade" id="report-issue-modal" tabindex="-1" aria-labelledby="reportIssueModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportIssueModalLabel">Report an Issue</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="report-issue-form">
+                        <div class="mb-3">
+                            <label for="reporter-name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="reporter-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reporter-email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="reporter-email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="issue-description" class="form-label">Issue Description</label>
+                            <textarea class="form-control" id="issue-description" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-secondary" id="cancel-report">Cancel</button>
+                    </form>
                 </div>
             </div>
         </div>
