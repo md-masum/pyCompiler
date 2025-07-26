@@ -86,7 +86,7 @@
             <div id="content">
             
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="main-header">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleOpen" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -168,11 +168,35 @@
                 </div>
                 <!-- /.container-fluid -->
 
+                <!-- Chatbot -->
+                <div id="chatbot-container">
+                    <div id="chatbot-toggle">
+                        <svg id="chatbot-toggle-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6zm8 5H6v-2h8zM18 7H6V5h12z"/>
+                        </svg>
+                    </div>
+                    <div id="chatbot-window">
+                        <div id="chatbot-header">
+                            <span>Chatbot</span>
+                            <button id="chatbot-close">&times;</button>
+                        </div>
+                        <div id="chatbot-body"></div>
+                        <div id="chatbot-footer">
+                            <input type="text" id="chatbot-input" placeholder="Type a message...">
+                            <button id="chatbot-send">
+                                <svg id="chatbot-send-icon" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- End of Main Content -->
 
              <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white" id="main-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; <span id="footer-year"></span> Offline Python IDE</span>
@@ -185,7 +209,7 @@
     </div>
 
     <!-- Chatbot -->
-    <div id="chatbot-container">
+    <!-- <div id="chatbot-container">
         <div id="chatbot-toggle">
             <svg id="chatbot-toggle-icon" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6zm8 5H6v-2h8zM18 7H6V5h12z"/>
@@ -206,7 +230,7 @@
                 </button>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -261,7 +285,8 @@
     <script src="script/training.js" type="module" defer></script>
     <script src="script/ui-logic.js" type="module" defer></script>
     <script src="script/report-issue.js" type="module" defer></script>
-    <script src="script/chatbot.js"></script>
+    
+    <script src="script/chatbot.js" type="module"></script>
 
     <!-- Modal for Example Code -->
     <div class="modal fade" id="example-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

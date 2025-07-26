@@ -15,6 +15,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isMobile = () => window.innerWidth < 768;
 
+    window.addEventListener('load', adjustChatbotPosition);
+    window.addEventListener('resize', adjustChatbotPosition);
+
+
+    const footer = document.querySelector('.sticky-footer');
+    const chatbotContainer = document.getElementById('chatbot-container');
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                chatbotContainer.style.bottom = `${footer.offsetHeight + 20}px`;
+            } else {
+                chatbotContainer.style.bottom = '20px';
+            }
+        },
+        { threshold: 0.1 }
+    );
+
+    if (footer) {
+        observer.observe(footer);
+    }
+
+    function adjustChatbotPosition() {
+        const header = document.getElementById('main-header');
+        const footer = document.getElementById('main-footer');
+        const chatbotWindow = document.getElementById('chatbot-window');
+
+        const headerHeight = header ? header.offsetHeight : 0;
+        const footerHeight = footer ? footer.offsetHeight : 0;
+
+        if (window.innerWidth < 768) {
+            // Mobile: position below header
+            chatbotWindow.style.top = `${headerHeight}px`;
+            chatbotWindow.style.height = `calc(100vh - ${headerHeight + footerHeight}px)`;
+        } else {
+            // Desktop: reset styles if needed
+            chatbotWindow.style.top = 'auto';
+            chatbotWindow.style.height = '';
+        }
+    }
+
+
     // Toggle chatbot window visibility
     chatbotToggle.addEventListener('click', () => {
         chatbotWindow.classList.toggle('open');
